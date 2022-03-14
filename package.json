@@ -1,0 +1,36 @@
+{
+  "name": "expandablecard",
+  "version": "1.0.0",
+  "description": "Animated expandable card for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YasserKassem989979/ExpandableCard.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "react-native-component",
+    "react",
+    "react native",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "expandable",
+    "expandable card",
+    "Animated expandable"
+  ],
+  "author": "Yasser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YasserKassem989979/ExpandableCard/issues"
+  },
+  "homepage": "https://github.com/YasserKassem989979/ExpandableCard#readme",
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.69.0"
+  }
+}
