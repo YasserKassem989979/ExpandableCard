@@ -10,7 +10,7 @@ import {
   Easing,
   StyleSheet,
 } from 'react-native';
-import Icon from './assests/chevron.png';
+import Icon from '../../assests/chevron.png';
 
 export default class ExpandableCard extends Component {
   constructor(props) {
