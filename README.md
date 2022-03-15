@@ -5,7 +5,7 @@ A simple and animated expandable card for React Native.
 
 Example             
 :-------------------------:
-(demo/demo.gif)
+![This is a demo.](/demo/demo.gif)
 
 ## Installation
 
