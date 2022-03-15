@@ -1,4 +1,3 @@
-import ExpandableCard from './src/ExpandableCard/ExpandableCard';
-
-export { ExpandableCard };
+import ExpandableCard from './src/ExpandableCard';
+export default ExpandableCard;
 
