@@ -31,7 +31,7 @@ import ExpandableCard from 'expandablecard';
                 title='test card two'
                 expanded={false}
                 contentContainerStyle={{ alignItems: 'center' }}>
-                <View style={{}}>
+                <View>
                     <Image
                         style={{ height: 150, width: 200 }}
                         source={{ uri: 'https://cars.usnews.com/static/images/Auto/custom/14737/2022_Acura_ILX_1.jpg' }} />
