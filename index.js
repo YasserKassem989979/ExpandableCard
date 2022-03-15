@@ -1,4 +1,4 @@
-import ExpandableCard from './src/ExpandableCard';
+import ExpandableCard from './src/ExpandableCard/ExpandableCard';
 
 export { ExpandableCard };
 
