@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -17,32 +15,48 @@ export default class ExpandableCard extends Component {
     super(props);
     this.state = {
       height: new Animated.Value(0),
-      bodyHeight: props.contentHeight,
+      bodyHeight: props.contentHeight || 0,
       inProgress: true,
       opened: props.expanded,
+      animating: false
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.expanded !== this.props.expanded) {
+      this.toggle()
+    }
   }
 
   toggle = () => {
     const { height, bodyHeight, opened } = this.state;
     const { animationDuration } = this.props;
 
-    this.setState({ opened: !opened }, () => {
+    this.setState({ opened: !opened, animating: true }, () => {
       Animated.timing(height, {
         toValue: opened ? 0 : bodyHeight,
         duration: animationDuration,
         easing: Easing.linear,
         useNativeDriver: false,
-      }).start();
+      }).start(() => this.setState({ animating: false }));
     });
   };
 
   setBodyHeight = event => {
-    const { bodyHeight, opened } = this.state;
+    const { bodyHeight, opened, inProgress, animating } = this.state;
     const { height } = event.nativeEvent.layout;
 
     //to detect the height of content only on mount
+    // or when contentHeight prop defined
     if (bodyHeight > 0) {
+      if (inProgress) {
+        this.setState({ inProgress: false });
+      }
+      // if expanded prop is true 
+      if (opened && !animating) {
+        this.state.height.setValue(bodyHeight);
+      }
+
       return;
     }
 
@@ -173,6 +187,3 @@ ExpandableCard.defaultProps = {
   title: '',
   activeOpacity: 0.8
 };
-
-
-
