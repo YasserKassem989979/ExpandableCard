@@ -56,10 +56,11 @@ import ExpandableCard from 'expandablecard';
 | iconSize                  | size on indicator                        | 24          | Number  |
 | title                     | header title                             | ''          | String  |
 | activeOpacity             | the opacity of header view when touch    | 0.8         | Number  |
-| indicator                 | indicator component to render            | null        | component  |
-| headerStyle               | style for header                         | null        | ViewStyle  |
-| contentContainerStyle     | style for content wrapper                | null        | ViewStyle  |
+| indicator                 | indicator component to render            | null        | component |
+| headerStyle               | style for header                         | null        | ViewStyle |
+| contentContainerStyle     | style for content wrapper                | null        | ViewStyle |
 | containerStyle            | style for card Wrapper                   | null        | ViewStyle |
+| contentHeight             | default height for body                  | 0           | Number  |
 
 ## Author
 Yasser Kassem
