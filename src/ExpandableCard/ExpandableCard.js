@@ -17,7 +17,7 @@ export default class ExpandableCard extends Component {
     super(props);
     this.state = {
       height: new Animated.Value(0),
-      bodyHeight: 0,
+      bodyHeight: props.contentHeight,
       inProgress: true,
       opened: props.expanded,
     };
@@ -41,10 +41,12 @@ export default class ExpandableCard extends Component {
     const { bodyHeight, opened } = this.state;
     const { height } = event.nativeEvent.layout;
 
+    //to detect the height of content only on mount
     if (bodyHeight > 0) {
       return;
     }
 
+    // if expanded 
     if (opened) {
       this.state.height.setValue(height);
     }
@@ -151,14 +153,6 @@ const styles = StyleSheet.create({
   }
 })
 
-ExpandableCard.defaultProps = {
-  expanded: true,
-  animationDuration: 300,
-  iconSize: 24,
-  title: '',
-  activeOpacity: 0.8
-};
-
 ExpandableCard.propTypes = {
   expanded: PropTypes.bool,
   animationDuration: PropTypes.number,
@@ -169,6 +163,16 @@ ExpandableCard.propTypes = {
   headerStyle: PropTypes.object,
   contentContainerStyle: PropTypes.object,
   containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  contentHeight: PropTypes.number
 }
+
+ExpandableCard.defaultProps = {
+  expanded: true,
+  animationDuration: 300,
+  iconSize: 24,
+  title: '',
+  activeOpacity: 0.8
+};
+
 
 
