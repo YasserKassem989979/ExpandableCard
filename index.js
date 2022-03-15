@@ -1,3 +1,3 @@
-import ExpandableCard from './src/ExpandableCard';
+import { ExpandableCard } from './src/ExpandableCard';
 export default ExpandableCard;
 
